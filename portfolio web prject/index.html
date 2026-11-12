@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a class="active" href="about.html" >About</a>
+        <a href="resume.html">Resume</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Blog</a>
+        <a href="contact.html">Contact</a>
+        
+    </nav>
+    <div class="container">
+
+<div class="about">
+
+<h1>About Me</h1>
+<div class="f"></div>
+<p>I'm<h3>Nandhakumar.V</h3>Computer Science Engineering student, Coimbatore at Nehru institute of technology.
+I enjoy in buliding websites beautiful with creative ideas.
+</p>
+<p>
+My job is to build your website so that it is functional and user-friendly but at the same time attractive.
+
+</p>
+
+</div>
+
+
+<h2 class="section-title">What I'm Doing</h2>
+
+<div class="services">
+
+<div class="card">
+
+<div>
+<h3>Web Design</h3>
+<p>The most modern and high-quality design made at a professional level.</p>
+</div>
+</div>
+
+<div class="card">
+
+<div>
+<h3>Web Development</h3>
+<p>High-quality development of sites at the professional level.</p>
+</div>
+</div>
+
+<div class="card">
+
+<div>
+<h3>Mobile Apps</h3>
+<p>Professional development of applications for iOS and Android.</p>
+</div>
+</div>
+
+<div class="card">
+
+<div>
+<h3>Photography</h3>
+<p>I make high-quality photos of any category at a professional level.</p>
+</div>
+</div>
+
+<div class="card">
+
+    <h3>Daniel Lewis</h3>
+    <p>Richard was hired to create a corporate identity. We were very pleased with the work...</p>
+</div>  
+
+<div class="card">
+    
+    <h3>Jessica Miller</h3>
+    <p>Richard was hired to create a corporate identity. We were very pleased with the work...</p>
+</div> 
+</div>
+</div>
+<section class="clients">
+
+
+ 
+
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+</section>
+<script>
+    const canvas = document.createElement("canvas");
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+canvas.style.position = "fixed";
+canvas.style.top = 0;
+canvas.style.left = 0;
+canvas.style.zIndex = -1;
+
+// Eye state
+let eyeOpen = 0; // 0 = closed, 1 = open
+let direction = 1;
+
+function drawEye() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  let centerX = canvas.width / 2;
+  let centerY = canvas.height / 2;
+
+  // Eye opening animation
+  let height = 80 * eyeOpen;
+
+  // Eye shape
+  ctx.beginPath();
+  ctx.ellipse(centerX, centerY, 150, height, 0, 0, Math.PI * 2);
+  ctx.fillStyle = "#ffffff";
+  ctx.fill();
+
+  // Iris
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, 40 * eyeOpen, 0, Math.PI * 2);
+  ctx.fillStyle = "#f5c542";
+  ctx.fill();
+
+  // Pupil
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, 15 * eyeOpen, 0, Math.PI * 2);
+  ctx.fillStyle = "#000";
+  ctx.fill();
+
+  // Eyelid effect
+  ctx.fillStyle = "#111";
+  ctx.fillRect(0, 0, canvas.width, centerY - height);
+  ctx.fillRect(0, centerY + height, canvas.width, canvas.height);
+}
+
+function animate() {
+  eyeOpen += 0.02 * direction;
+
+  if (eyeOpen >= 1) direction = -1;
+  if (eyeOpen <= 0) direction = 1;
+
+  drawEye();
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+</div>
+</div>
+<script src="script.js"></script> 
+</body>
+</html>
